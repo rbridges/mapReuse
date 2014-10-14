@@ -14,6 +14,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
@@ -24,8 +25,10 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
+	static Bundle saved;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		saved = savedInstanceState;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 	}
@@ -74,6 +77,9 @@ public class MainActivity extends Activity {
 			Log.d("latitude", "" + lat);
 			Log.d("longitude", "" + lng);
 			
+			Intent i = new Intent(this,MapPlot.class);
+			i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(i);
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
