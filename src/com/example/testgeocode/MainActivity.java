@@ -16,6 +16,7 @@ import org.json.JSONObject;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -36,7 +37,7 @@ public class MainActivity extends Activity {
 		String text2 = text.getText().toString().replace(" ","&");
 		
 		String uri = "http://maps.google.com/maps/api/geocode/json?address="
-				+ text2+"&" + "&skey=AIzaSyAR49II0pkWe2QG6RO-hLwQW4bRS9-g94o";
+				+ text2+ "&skey=AIzaSyAR49II0pkWe2QG6RO-hLwQW4bRS9-g94o";
 		HttpGet httpGet = new HttpGet(uri);
 		HttpClient client = new DefaultHttpClient();
 		HttpResponse response;
@@ -70,8 +71,9 @@ public class MainActivity extends Activity {
 					.getJSONObject(0).getJSONObject("geometry")
 					.getJSONObject("location").getDouble("lat");
 
-//			Log.d("latitude", "" + lat);
-//			Log.d("longitude", "" + lng);
+			Log.d("latitude", "" + lat);
+			Log.d("longitude", "" + lng);
+			
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
