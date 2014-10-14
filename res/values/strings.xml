@@ -3,6 +3,7 @@
 
     <string name="app_name">TestGeoCode</string>
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="gimmie_location">Please Enter a Location</string><string name="action_settings">Settings</string>
+    
 
 </resources>
