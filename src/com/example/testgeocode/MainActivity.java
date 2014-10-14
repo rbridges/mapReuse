@@ -79,6 +79,10 @@ public class MainActivity extends Activity {
 			
 			Intent i = new Intent(this,MapPlot.class);
 			i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			Bundle longandlat = new Bundle();
+			longandlat.putDouble("longitude", lng);
+			longandlat.putDouble("latitude", lat);
+			i.putExtras(longandlat);
 			startActivity(i);
 		} catch (JSONException e) {
 			e.printStackTrace();
