@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
 		EditText text = (EditText) findViewById(R.id.main_input);
 		Toast.makeText(this, "Okay: " + text.getText(), Toast.LENGTH_LONG)
 				.show();
-		String text2 = text.getText().toString().replace(" ","&");
+		String text2 = text.getText().toString().replace(" ","+");
 		
 		String uri = "http://maps.google.com/maps/api/geocode/json?address="
 				+ text2+ "&skey=AIzaSyAR49II0pkWe2QG6RO-hLwQW4bRS9-g94o";
